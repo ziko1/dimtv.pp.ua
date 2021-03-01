@@ -1,0 +1,52 @@
+/*====================  
+    4.2 History CSS
+====================*/
+.history-wrapper {
+    padding-left: 100px;
+    @media #{$desktop-device} {
+        padding-left: 60px;
+    }    
+    @media #{$tablet-device, $large-mobile} {
+        padding-left: 0px;
+    }
+    & .title {
+        font-size: 30px;
+        font-weight: 600;
+        font-family: $headings-font-family;
+        color: $headings-color;
+
+        margin-bottom: 40px;
+
+        text-transform: uppercase;
+
+        @media #{$large-mobile} {
+            margin-bottom: 30px;
+        }
+        @media #{$small-mobile} {
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+    }
+    & .history-content {
+        & .subtitle {
+            font-size: 18px;
+            font-family: $font-family-base;
+            line-height: 1.8;
+        }
+        & p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+    }
+
+    & .signature {
+        margin-top: 50px;
+
+        & .title {
+            margin-top: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+}

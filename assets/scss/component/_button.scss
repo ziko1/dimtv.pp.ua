@@ -1,0 +1,84 @@
+/*----------------------------------------*/
+/*  04. Component CSS
+/*----------------------------------------*/
+
+/*====================  
+    4.1 Button CSS
+====================*/
+.btn {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    font-family: $font-family-base;
+    justify-content: center;
+    padding: 15px 30px;
+
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 0;
+    outline: none;
+    border: 0;
+
+    // Responsive
+    @media #{$large-mobile}{
+        font-size: 14px;
+        padding: 15px 20px;
+    }
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+/* Button Color & Style (Solid & Outline) */
+@each $name,
+$value in $theme-colors {
+    .btn-#{$name} {
+        border-color: $value;
+        background-color: $value;
+
+        @if $name==warning or $name==light {
+            color: $primary;
+        }
+
+        @else if $name==white-gray {
+            color: $primary;
+        }
+
+        @else {
+            color: $white;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: transparent;
+            background-color: darken($value, 7.5%);
+
+            @if $name==warning or $name==light {
+                color: $headings-color;
+            }
+
+            @else {
+                color: $white;
+            }
+        }
+    }
+}
+
+/* Button Hover Color & Style (Solid & Outline) */
+@each $name,
+$value in $theme-colors {
+    .btn-hover-#{$name} {
+        &:hover,
+        &:not(:disabled):not(.disabled).active {
+            border-color: transparent;
+            background-color: $value;
+
+            @if $name==warning or $name==light {
+                color: $headings-color;
+            }
+
+            @else {
+                color: $white;
+            }
+        }
+    }
+}

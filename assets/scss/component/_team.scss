@@ -1,0 +1,90 @@
+/*====================  
+    4.9 Team CSS
+====================*/
+.team-block{
+    & .inner-box {
+        & .image{
+            position:relative;
+            border-radius:3px;
+            overflow:hidden;
+
+            & img{
+                position:relative;
+                width:100%;
+                display:block;
+                transition:all 600ms ease;
+            }
+
+            & .social-icons{
+                position:absolute;
+                right:-250px;
+                bottom:10px;
+                padding:10px 20px 8px;
+                background-color:#ffffff;
+                transition:all 600ms ease;
+
+                & li{
+                    position:relative;
+                    margin-right:15px;
+                    display:inline-block;
+
+                    &:last-child {
+                        margin-right: 0px;
+                    }
+
+                    & a{
+                        position:relative;
+                        color:#666666;
+                        font-size:16px;
+                        transition:all 300ms ease;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            & .image {
+                & img {
+                    transform: scale(1.1) rotate(1deg);
+                    transition: .6s;
+                }
+
+                & .social-icons{
+                    right: 0px;
+                }
+            }
+
+            & .team-content {
+                & .title {
+                    & a {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+
+        & .team-content {
+            padding:25px 0px 0px;
+
+            & .title {
+                font-weight:600;
+                line-height:1.3em;
+
+                & a {
+                    color:#000000;
+                    transition:all 300ms ease;
+                }
+            }
+
+            & .subtitle {
+                color:#666666;
+                font-size:14px;
+                margin-top:6px;
+            }
+        }
+    }
+}

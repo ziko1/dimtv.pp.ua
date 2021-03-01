@@ -1,0 +1,227 @@
+/*====================  
+    5.4 Contact Page CSS
+====================*/
+.contact-content-wrapper {
+    position: relative;
+    top: -90px;
+    margin-bottom: 60px;
+    @media #{$tablet-device} {
+        margin-bottom: 0px;
+    }
+    @media #{$large-mobile} {
+        top: 0;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}
+.google-map-area {
+    & .contact-map {
+        width: 100%;
+        height: 550px;
+        display: block;
+
+        @media #{$desktop-device} {
+           height: 500px;
+        }
+        @media #{$tablet-device} {
+            height: 450px;
+        }
+        @media #{$large-mobile} {
+            height: 380px;
+        }
+    }
+}
+
+.contact-info-boxed{
+	z-index: 10;
+	padding: 90px 65px 95px;
+    margin-bottom: 0px;
+
+    @media #{$large-mobile, $tablet-device} {
+        padding: 60px 30px 60px;
+    }
+
+    @media #{$extra-small-mobile} {
+        padding: 20px;
+    }
+
+    & .inner-content {
+        @media #{$large-mobile} {
+            margin-bottom: 50px;
+        }
+    }
+    
+    & .title {
+        color: $dark;
+        font-size:30px;
+        font-weight:600;
+        line-height:1.3em;
+        margin-bottom:12px;
+
+        @media #{$extra-small-mobile} {
+            font-size: 24px;
+        }
+
+        & span {
+            color:$gray-400;
+            font-weight:400;
+        }
+    }
+
+    & .text {
+        color:$gray-300;
+        font-size:16px;
+        line-height:1.8em;
+    }
+
+    & .email {
+        position:relative;
+        color:$dark;
+        font-weight:600;
+        font-size:16px;
+        margin-top:28px;
+        padding-bottom:128px;
+        display: block;
+
+        @media #{$large-mobile} {
+            padding-bottom: 60px;
+        }
+
+        & a {
+            position:relative;
+            color:$gray-300;
+            font-weight:400;
+        }
+
+        &::before {
+            position:absolute;
+            content:'';
+            left:0px;
+            bottom:0px;
+            width:70px;
+            height:3px;
+            background-color:$primary;
+        }
+    }
+
+    & .call{
+        color:$gray-400;
+        font-size:14px;
+        font-weight:400;
+        line-height:1.5em;
+        margin-bottom:60px;
+        text-transform:uppercase;
+
+        & a{
+            color:$dark;
+            font-size:36px;
+            font-weight:600;
+            line-height:1em;
+            margin-top:15px;
+            display:inline-block;
+            @media #{$tablet-device} {
+                font-size: 30px;
+            }
+            @media #{$large-mobile} {
+                font-size: 26px;
+            }
+            @media #{$extra-small-mobile} {
+                font-size: 22px;
+            }
+        }
+    }
+
+    & .location-list {
+        margin-top: 30px;
+        & li {
+            color:$gray-300;
+            font-size:14px;
+            line-height:1.8em;
+            font-weight:400;
+            margin-bottom:30px;
+
+            & span{
+                display:block;
+                color:$dark;
+                font-size:14px;
+                line-height:1.8em;
+                font-weight:600;
+                margin-bottom:5px;
+                text-transform:uppercase;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.form-boxed{
+	position:relative;
+    padding:70px 70px;
+    
+    @media #{$tablet-device} {
+        padding: 60px 30px;
+    }
+    @media #{$large-mobile} {
+        padding: 60px 30px;
+    }
+    @media #{$extra-small-mobile} {
+        padding: 20px;
+    }
+    
+    & .boxed-inner{
+        position:relative;
+    }
+}
+
+/* Contact Form */
+
+.contact-form{
+    & .form-group{
+        position:relative;
+        margin-bottom:30px;
+
+        & input[type="text"],
+        & input[type="password"],
+        & input[type="tel"],
+        & input[type="email"],
+        & select{
+            position:relative;
+            display:block;
+            width:100%;
+            color:$dark;
+            line-height:28px;
+            padding:10px 20px;
+            height:50px;
+            font-size:14px;
+            border-radius:0px;
+            background-color: $white;
+            border:1px solid $border-color;
+            transition:all 300ms ease;
+
+            &:focus {
+                border-color: $primary;
+            }
+        }
+
+        & textarea {
+            position:relative;
+            display:block;
+            width:100%;
+            line-height:24px;
+            padding:15px 20px;
+            color:$dark;
+            height:210px;
+            resize:none;
+            font-size:14px;
+            border-radius:0px;
+            background-color:$white;
+            border:1px solid $border-color;
+            transition:all 300ms ease;
+            &:focus {
+                border-color: $primary;
+            }
+        }
+    }
+} 

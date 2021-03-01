@@ -1,0 +1,131 @@
+/*====================  
+    4.3 Service CSS
+====================*/
+.service-inner-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    & .service-block {
+        width: 25%;
+        border: 1px solid $border-color;
+        border-right: none;
+        background: $white;
+        position:relative;
+
+        @media #{$tablet-device, $large-mobile} {
+            width: 50%;
+            &:nth-of-type(2) {
+                border-bottom: 0px;
+            }
+            &:nth-of-type(1) {
+                border-bottom: 0px;
+            }
+        }       
+         @media #{$extra-small-mobile} {
+            width: 100%;
+            border-right: 1px solid $border-color;
+            &:nth-of-type(3) {
+                border-bottom: 0px;
+            }
+            &:nth-of-type(2) {
+                border-bottom: 0px;
+            }
+            &:nth-of-type(1) {
+                border-bottom: 0px;
+            }
+        }
+
+        &:last-child {
+            border-right:1px solid $border-color;
+        }
+
+        & .inner-box{
+            position:relative;
+            min-height:330px;
+            padding:32px 30px 25px;
+
+            @media #{$desktop-device, $small-mobile} {
+                padding: 25px 15px;
+            }
+
+            &::before {
+                position:absolute;
+                content:'';
+                left:0px;
+                top:0px;
+                right:0px;
+                bottom:0px;
+                transform:scale(0,1);
+                background-color: $primary;
+                transition: $transition-base;
+            }
+
+            &:hover {
+                &::before{
+                    transform:scale(1,1);
+                }
+                & .title {
+                    & a {
+                        color: $white;
+                    }
+                }
+                & .more, 
+                & .icon, 
+                & p {
+                    color: $white;
+                }
+
+            }
+
+            & .title {
+                position: relative;
+                font-weight: 600;
+                line-height: 1.4;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+
+                & a {
+                    position:relative;
+                    color: $black;
+                    transition: $transition-base;
+                }
+            }
+
+            & p{
+                position:relative;
+                font-size:14px;
+                line-height:1.9;
+                margin-bottom:25px;
+                transition: $transition-base;
+            }
+
+            & .icon{
+                position:relative;
+                line-height: 1;
+                color: $primary;
+                font-size:48px;
+                transition: $transition-base;
+            }
+
+            & .more{
+                position:relative;
+                color: $black;
+                font-size:14px;
+                font-weight:600;
+                margin-top:30px;
+                display:inline-block;
+                text-transform:uppercase;
+                transition: $transition-base;
+            }
+
+            & .icon-link-bottom {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                bottom: 20px;
+                left: 30px;
+            }
+        }
+    }
+}

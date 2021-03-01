@@ -1,0 +1,124 @@
+/*====================  
+    4.6 Client CSS
+====================*/
+.single-client-wrapper {
+    border: 1px solid $border-color;
+    padding: 40px;
+    position: relative;
+    & .client-thumb-icon {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        & .icon {
+            & i {
+                font-size: 36px;
+                color: $primary;
+            }
+        }
+    }
+
+    & .client-content {
+        & .name {
+            margin-bottom: 25px;
+            & a {
+                font-weight: 600;
+                font-size: 16px;
+                color: $dark;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+            & span {
+                font-size: 14px;
+                font-weight: 400;
+                color: $gray-400;
+            }
+        }
+
+        & p {
+            font-size: 14px;
+            font-weight: 400;
+            color: $gray-300;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        width: 0;
+        height: 4px;
+        background: $primary;
+        content: "";
+        top: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: .6s;
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+            transition: .6s;
+        }
+    }
+}
+.client-title {
+
+    & .title {
+        @media #{$extra-small-mobile}{
+            font-size: 20px;
+            padding-right: 70px;
+        }
+    }
+
+}
+.client-crousel {
+    & .client-crousel-prev, & .client-crousel-next {
+        display: flex;
+        align-items: center;
+        top: -78px;
+
+        @media #{$tablet-device}{
+            top: -68px;
+        }
+        @media #{$large-mobile}{
+            top: -55px;
+        }
+
+        @media #{$extra-small-mobile}{
+            top: -52px;
+        }
+    
+
+        &:focus{
+            border: 0px;
+            outline: 0px;
+        }
+        &:after{
+            display: none;
+        }
+        & i{ 
+            opacity: 1;
+            visibility: visible;
+            font-size: 30px;
+            color: $dark;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            &:hover{
+                color: $primary;
+                transition: .3s;
+            }
+        }
+    }
+    & .client-crousel-prev {
+        left: auto;
+        right: 50px;
+    }
+    & .client-crousel-next {
+        right: 15px;
+    }
+}

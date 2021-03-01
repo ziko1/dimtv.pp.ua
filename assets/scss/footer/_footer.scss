@@ -1,0 +1,121 @@
+/*----------------------------------------*/
+/*  06. Footer CSS
+/*----------------------------------------*/
+// Footer Logo Style
+.footer-logo {
+    margin-bottom: 90px;
+    @media #{$tablet-device} {
+        margin-bottom: 76px;
+    }    
+    @media #{$large-mobile} {
+        margin-bottom: 56px;
+    }
+}
+// Footer Nav Style
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 50px;
+
+    & li {
+        margin-right: 65px;
+        line-height: 1;
+
+        @media #{$large-mobile} {
+            margin-right: 20px;
+        }
+        & a {
+            font-size: 14px;
+            font-weight: 600;
+            color: $dark;
+            font-family: $font-family-base;
+            text-transform: uppercase;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                width: 0;
+                height: 1px;
+                background: $dark;
+                left: 0;
+                transition: $transition-base;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                    transition: $transition-base;
+                }
+            }
+        }
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+}
+// Footer Contact Info Style
+.contact-info {
+    font-family: $font-family-base;
+    font-weight: 400;
+    font-size: 14px;
+    color: $gray-300;
+    margin-bottom: 50px;
+
+    & a {
+        font-family: $font-family-base;
+        font-weight: 400;
+        font-size: 14px;
+        color: $gray-300;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+// Footer Social Media Link Style 
+.footer-social-icons {
+    margin-bottom: 90px;
+
+    @media #{$tablet-device} {
+        margin-bottom: 64px;
+    }    
+    @media #{$large-mobile} {
+        margin-bottom: 46px;
+    }
+
+    & li {
+        margin-right: 35px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+
+        & a {
+            font-size: 18px;
+        }
+    }
+}
+// Copyright
+.copyright {
+    font-size: 14px;
+    color: $gray-400;
+    margin-bottom: 50px;
+
+    & span {
+        color: $dark;
+        font-weight: 600;
+    }
+
+    & a {
+        color: $dark;
+        font-weight: 600;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}

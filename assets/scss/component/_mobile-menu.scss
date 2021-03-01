@@ -1,0 +1,142 @@
+/*====================  
+    4.10 Mobile Menu CSS
+====================*/
+/*  Mobile Menu */
+.mobile-menu-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition-base;
+    transition-duration: 700ms;
+    z-index: 9999;
+    &.open{
+        opacity: 1;
+        visibility: visible;
+        & .mobile-menu-inner {
+            transform: none;
+        }
+    }
+}
+
+// Mobile Menu Inner
+.mobile-menu-inner {
+    width: 100%;
+    height: 100%;
+    width: 350px;
+    background-color: $white;
+    box-shadow: -1px 0px 20px -5px #aaa;
+    position: relative;
+    transform: translateX(calc(100% - 50px));
+    transition: $transition-base;
+    transition-duration: 700ms;
+    margin-left: auto;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    @media #{$small-mobile} {
+        width: 320px;
+    }
+    & .mobile-menu-inner-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin-bottom: 40px;
+        
+    }
+    & .offcanvas-btn-close{
+        font-size: 40px;
+        color: $dark;
+        opacity: 1;
+        & i{
+            cursor: pointer;
+            transition: $transition-base;
+            &:hover{
+                color: $primary;
+                transition: $transition-base;
+            }
+        }
+    }
+    .widget-social {
+        justify-content: flex-start;
+        display: flex;
+    }
+}
+
+// Main Mobile Menu
+.mobile-menu {
+    text-align: start;
+    padding: 10px 0px 30px;
+    & > .has-children {
+        & > a {
+            & i {
+                transform: rotate(0deg);
+                transition: $transition-base;
+            }
+        }
+        & .dropdown {
+            margin-top: 10px;
+            & li {
+                & a {
+                    font-size: 14px;
+                    display: block;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    padding: 10px 10px 10px 15px;
+                    line-height: 1;
+
+                    &:hover {
+                        color: $primary;
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+        &.active{
+            & > a {
+                color: $primary;
+                & i {
+                    transform: rotate(180deg);
+                    transition: $transition-base;
+                }
+            } 
+        }
+    }
+    & > li {
+        border-bottom: 1px solid #ebebeb;
+        padding: 15px 20px;
+        & > a {
+            color: $dark;
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            text-transform: uppercase;
+            &:hover {
+                color: $primary;
+            }
+        }
+        &:first-child {
+            border-top: 1px solid #ebebeb;
+        }
+    }
+}
+
+/* Offcanvas Overlay */
+.offcanvas-overlay {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $dark;
+    opacity: .9;
+}

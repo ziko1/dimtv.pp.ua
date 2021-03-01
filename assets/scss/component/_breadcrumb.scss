@@ -1,0 +1,60 @@
+/*====================  
+    4.11 Breadcrumb CSS
+====================*/
+.breadcrumb-wrapper{
+	text-align: center;
+    
+    & .title {
+        color: $dark;
+        font-weight: 600;
+        line-height: .8;
+        font-size: 72px;
+        margin-bottom: 25px;
+
+        @media #{$tablet-device} {
+            font-size: 60px;
+        }
+        @media #{$large-mobile} {
+            font-size: 50px;
+        }
+        @media #{$small-mobile} {
+            font-size: 40px;
+        }
+    }
+
+    & .post-meta {
+
+        & li {
+            position: relative;
+            color: $gray-300;
+            font-size: 14px;
+            font-weight: 400;
+            padding-right: 12px;
+            margin-right: 12px;
+            display: inline-block;
+            text-transform: capitalize;
+
+            &::before {
+                position: absolute;
+                content: '/';
+                right: -4px;
+                top: 0px;
+            }
+            &:last-child {
+                margin-right: 0px;
+                padding-right: 0px;
+                &::before {
+                    display: none;
+                }
+            }
+
+            & a {
+                color: $dark;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
